@@ -26,223 +26,119 @@
             margin-bottom: 30px;
             display: flex; align-items: center; justify-content: center;
             background: var(--surface);
-            transition: 0.3s ease; /* إضافة حركة بسيطة */
             box-shadow: 0 0 20px rgba(255, 127, 0, 0.2);
         }
         .logo-circle img { width: 90%; object-fit: contain; }
 
         .container { display: flex; flex-wrap: wrap; padding: 50px; gap: 50px; }
 
-        /* الجزء الجانبي - المعلومات */
+        /* الجزء الجانبي */
         .sidebar { flex: 1; min-width: 300px; text-align: right; }
-        
-        .sidebar h1 { font-size: 3.5rem; font-weight: 900; line-height: 1; margin-bottom: 20px; }
+        .sidebar h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 10px; }
         .sidebar h1 span { color: var(--primary); }
+        .sub-title { color: var(--primary); font-size: 1.4rem; font-weight: bold; margin-bottom: 25px; display: block; }
         .sidebar p.marketing-text { font-size: 1.1rem; color: var(--gray); margin-bottom: 40px; border-right: 4px solid var(--primary); padding-right: 15px; }
 
-        /* قسم الفريق - صور دائرية وجانبية */
+        /* الفريق */
         .team-sidebar { margin-top: 50px; }
-        .member-row { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; transition: 0.3s; }
-        .member-row:hover { transform: translateX(-10px); }
-        
-        .member-circle {
-            width: 80px; height: 80px;
-            border-radius: 50%;
-            border: 2px solid var(--primary);
-            overflow: hidden;
-            background: #222;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
+        .member-row { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .member-circle { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; background: #222; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
         .member-circle img { width: 100%; height: 100%; object-fit: cover; }
-        
         .member-info h3 { font-size: 1.2rem; margin-bottom: 2px; }
         .member-info span { color: var(--primary); font-size: 0.85rem; font-weight: bold; }
 
-        /* الجزء الرئيسي - المشاريع */
+        /* المشاريع */
         .main-content { flex: 2; min-width: 500px; }
         .section-title { font-size: 1.5rem; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
         .section-title::after { content: ""; height: 2px; background: var(--primary); flex: 1; }
-
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .project-card {
-            background: var(--surface);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #222;
-            transition: 0.4s;
-            cursor: pointer;
-        }
-        .project-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-/* تحويل الخانة لتصبح طولية (مثل أبعاد الجوال) */
-.project-thumb { 
-    width: 100%; 
-    height: 480px; /* هذا الارتفاع مثالي للمحتوى الطولي */
-    background: #111; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    overflow: hidden;
-    border-bottom: 2px solid var(--primary);
-}
-
-/* ضمان أن المحتوى (طولي أو عرضي) يملأ الخانة بشكل احترافي */
-.project-thumb img, 
-.project-thumb video, 
-.project-thumb iframe { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; /* هذه الخاصية تضمن عدم وجود فراغات سوداء مهما كان نوع المقطع */
-}        .project-details { padding: 20px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
+        .project-card { background: var(--surface); border-radius: 15px; overflow: hidden; border: 1px solid #222; }
+        .project-thumb { width: 100%; height: 480px; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 2px solid var(--primary); }
+        .project-thumb img, .project-thumb iframe { width: 100%; height: 100%; object-fit: cover; }
+        .project-details { padding: 20px; }
         .project-details h4 { margin-bottom: 10px; color: var(--primary); }
         .project-details p { font-size: 0.9rem; color: var(--gray); }
 
-        /* --- تصميم الفوتر (التذييل) الجديد --- */
-        footer {
+        /* بطاقة التواصل العرضية في الأسفل */
+        .contact-cta-wide {
             width: 100%;
-            padding: 40px 50px;
-            margin-top: 50px;
-            border-top: 1px solid #222;
+            background: rgba(255, 127, 0, 0.05);
+            border: 2px dashed var(--primary);
+            border-radius: 20px;
+            padding: 50px 20px;
             text-align: center;
-            background-color: #080808;
+            margin-top: 40px;
         }
-        footer p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-        }
-        footer span {
-            color: var(--primary);
-            font-weight: bold;
-        }
+        .contact-cta-wide h4 { font-size: 2rem; color: var(--text); margin-bottom: 15px; }
+        .contact-cta-wide p { color: var(--gray); font-size: 1.1rem; margin-bottom: 25px; }
+        .cta-button { background: var(--primary); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: 0.3s; }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(255, 127, 0, 0.4); }
+
+        /* الفوتر */
+        footer { width: 100%; padding: 40px; margin-top: 50px; border-top: 1px solid #222; text-align: center; background-color: #080808; }
+        footer span { color: var(--primary); font-weight: bold; }
+
+        /* زر الواتساب العائم */
+        .whatsapp-btn { position: fixed; bottom: 30px; left: 30px; background: var(--primary); color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 9999; box-shadow: 0 10px 20px rgba(255, 127, 0, 0.3); }
 
         @media (max-width: 768px) {
             .container { padding: 20px; flex-direction: column; }
             .sidebar h1 { font-size: 2.5rem; }
-            footer { padding: 30px 20px; }
-}
+            .main-content { min-width: 100%; }
         }
     </style>
 </head>
 <body>
 
+<a href="https://wa.me/967781899624" class="whatsapp-btn" target="_blank">تواصل معنا الآن</a>
+
 <div class="container">
     <aside class="sidebar">
-        <div class="logo-circle">
-            <img src="team.png" alt="Jack">
-        </div>
-        
-        <h1>جاك <span>JACK</span><p><h4><span>للحلول التسويقية و التنظيمية </span></h4> </p></h1>
-        <p> </p>
+        <div class="logo-circle"><img src="team.png" alt="Jack"></div>
+        <h1>جاك <span>JACK</span></h1>
+        <span class="sub-title">للحلول التسويقية و التنظيمية</span>
         <p class="marketing-text">
-في جاك، لا ننتظر المستقبل، نحن نمتلك أدواته. ندمج ذكاء الأتمتة بعبقرية التصميم لنمنح عملك القوة المطلقة في التحول الرقمي.            <strong>نحن نصنع القواعد، وأنت تتصدر المشهد.</strong>
+            في جاك، لا ننتظر المستقبل، نحن نمتلك أدواته. ندمج ذكاء الأتمتة بعبقرية التصميم لنمنح عملك القوة المطلقة في التحول الرقمي. 
+            <strong>نحن نصنع القواعد، وأنت تتصدر المشهد.</strong>
         </p>
 
         <div class="team-sidebar">
             <h2 class="section-title">فريق جاك</h2>
-            
-            <div class="member-row">
-                <div class="member-circle">⚙️</div>
-                <div class="member-info">
-                    <h3>جعفر</h3>
-                    <span>مهندس الأنظمة والأتمتة</span>
-                </div>
-            </div>
-
-            <div class="member-row">
-                <div class="member-circle">🎨</div>
-                <div class="member-info">
-                    <h3>عبدالعزيز</h3>
-                    <span>مصمم جرافيك و مونتير</span>
-                </div>
-            </div>
-
-            <div class="member-row">
-                <div class="member-circle">📊</div>
-                <div class="member-info">
-                    <h3>مصعب</h3>
-                    <span>مصمم جرافيك و مدير إدارة الصفحات</span>
-                </div>
-            </div>
+            <div class="member-row"><div class="member-circle">⚙️</div><div class="member-info"><h3>جعفر</h3><span>مهندس الأنظمة والأتمتة</span></div></div>
+            <div class="member-row"><div class="member-circle">🎨</div><div class="member-info"><h3>عبدالعزيز</h3><span>مصمم جرافيك و مونتير</span></div></div>
+            <div class="member-row"><div class="member-circle">📊</div><div class="member-info"><h3>مصعب</h3><span>مصمم جرافيك و مدير إدارة الصفحات</span></div></div>
         </div>
     </aside>
 
     <main class="main-content">
         <h2 class="section-title">سجل الإنجازات (المشاريع)</h2>
-        
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-thumb">
-    <iframe 
-        width="100%" 
-        height="100%" 
-        src="https://www.youtube.com/embed/XJ9KNwofOsM?autoplay=1&mute=1&loop=1&playlist=XJ9KNwofOsM&controls=0&modestbranding=1&rel=0&showinfo=0" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        style="pointer-events: none; border: none;">
-    </iframe>
+                <div class="project-thumb"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/XJ9KNwofOsM?autoplay=1&mute=1&loop=1&playlist=XJ9KNwofOsM&controls=0&modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="pointer-events: none;"></iframe></div>
+                <div class="project-details"><h4>مشروع أتمتة عقاري</h4><p>تحويل نظام مبيعات يدوي إلى نظام سحابي يعمل بالذكاء الاصطناعي 24/7.</p></div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/ptXfu5Nsa0w?autoplay=1&mute=1&loop=1&playlist=ptXfu5Nsa0w&controls=0&modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="pointer-events: none;"></iframe></div>
+                <div class="project-details"><h4>أتمتة المنظومات الطبية</h4><p>نظام محادثة ذكي يدير مواعيد العيادات ويجيب على الاستفسارات آلياً.</p></div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb"><img src="team1.jpeg" alt="تسويق عقاري فاخر" style="object-fit: contain; background: #000;"></div>
+                <div class="project-details"><h4>حملات التسويق العقاري</h4><p>تصميم هويات بصرية وإعلانية متكاملة تدمج بين الفن واستراتيجيات الجذب.</p></div>
+            </div>
+        </div>
+
+        <div class="contact-cta-wide">
+            <h4>هل تريد ندير لك مشاريعك؟</h4>
+            <p>دعنا نزيل همك  من خلال حلولنا الذكية.</p>
+            <a href="https://wa.me/967781899624" class="cta-button">ابدأ التواصل معنا الآن</a>
+        </div>
+    </main>
 </div>
-                <div class="project-details">
-                    <h4>مشروع أتمتة عقاري</h4>
-                    <p>تحويل نظام مبيعات يدوي إلى نظام سحابي يعمل بالذكاء الاصطناعي 24/7.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-        <div class="project-thumb">
-            <!-- استبدل VIDEO_ID_HERE بالمعرف الخاص بفيديو العيادة على يوتيوب -->
-            <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/ptXfu5Nsa0w?autoplay=1&mute=1&loop=1&playlist=ptXfu5Nsa0w&controls=0&modestbranding=1&rel=0&showinfo=0" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                style="pointer-events: none; border: none;">
-            </iframe>
-        </div>
-        <div class="project-details">
-            <h4>أتمتة المنظومات الطبية</h4>
-            <p>نظام محادثة ذكي يدير مواعيد العيادات، ينظم الحجوزات، ويجيب على استفسارات المرضى بدقة عالية وسرعة آليّة.</p>
-        </div>
-    </div>
-
-<div class="project-card">
-    <div class="project-thumb">
-<img src="team1.jpeg" alt="تسويق عقاري فاخر" 
-         style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-    </div>
-    <div class="project-details">
-        <h4>حملات التسويق العقاري الفاخر</h4>
-        <p>تصميم هويات بصرية وإعلانية متكاملة للمشاريع العقارية الكبرى، تدمج بين الأناقة الفنية واستراتيجيات الجذب الرقمي.</p>
-    </div>
-</div>
-            
-            <div class="project-card">
-                <div class="project-thumb">صور/فيديو المشروع 2</div>
-                <div class="project-details">
-                    <h4>هوية بصرية فندقية</h4>
-                    <p>تصميم متكامل ومونتاج فيديو ترويجي زاد من نسبة الحجوزات بمقدار 40%.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumb">صور/فيديو المشروع 3</div>
-                <div class="project-details">
-                    <h4>إدارة حملة نمو سريع</h4>
-                    <p>استراتيجية محتوى أدت لزيادة 100 ألف متابع حقيقي في 3 أشهر.</p>
-                </div>
-            </div>
-        </div>
 
 <footer>
     <p>© 2026 جميع حقوق البيانات والمحتوى محفوظة لفريق <span>جاك | JACK</span></p>
     <p>تم تصميم وتطوير هذا الموقع بواسطة <span>فريق جاك للحلول الذكية</span></p>
 </footer>
-    
+
 </body>
 </html>
